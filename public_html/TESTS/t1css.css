@@ -1,0 +1,43 @@
+
+
+
+.wrapper{
+    width: 600px;
+    height: 130px;
+    margin: 0 auto;
+    display: none;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+}
+#next {
+    display: none;
+    font-size: 38px;
+    border: 1px double #5d8ba6;
+    width: 20%;
+}
+#back {
+    position: absolute;
+    text-decoration: underline ;
+    top: 80%;
+    font-size: 20px;
+    color: dodgerblue; 
+}
+p {
+    font-size: 38px;
+    font-weight: bold;
+    padding-top: 2px;
+    color: grey;
+}
+button {
+    font-size: 38px; 
+}
+#question {
+    line-height: 1.5;
+}
+.result {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    font-size: 30px;
+}

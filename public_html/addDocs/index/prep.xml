@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<showLists>
+    <showList rus="about">About</showList>
+    <showList rus="after">After</showList>
+    <showList rus="at">At</showList>
+    <showList rus="between">Between</showList>
+    <showList rus="for">For</showList>
+    <showList rus="from">From</showList>
+    <showList rus="in">In</showList>
+    <showList rus="on">On</showList>
+    <showList rus="with">With</showList>	
+</showLists>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EE | T1</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../style/style.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="t1css.css" media="all" />
+        <script type="text/javascript" src="../style/js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="../style/js/scripts.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            // Тест взят с http://javascript.ru/forum/dom-window/46414-test-napisannyjj-na-java-script.html
+            $(function () {
+
+                $('.questionForm input[type=submit]').on('click', function (e) {
+                    var answer = 0;
+                    for (var i = 0; i < $('.group').length; i++) {
+                        $('.group').eq(i).each(function (id, elem) {
+                            if ($(elem).find('input:checked').length != 0) {
+                                if ($(elem).find('input:checked').attr('value') == 1) {
+                                    answer++;
+                                }
+                            }
+                        })
+                    }
+                    var general = (answer / $('.group').length) * 100;
+                    var text = '';
+                    console.log(general);
+                    switch (true) {
+                        case general >= 75:
+                            text = 'Молодец, 5!';
+                            alert(text + " Тест пройден на: " + general + "%");
+                            break;
+                        case general >= 60:
+                            text = 'Молодец, 4!';
+                            alert(text + " Тест пройден на: " + general + "%");
+                            break;
+                        case general >= 50:
+                            text = 'Молодец, 3!';
+                            alert(text + " Тест пройден на: " + general + "%");
+                            break;
+                        case general < 50:
+                            text = 'Плохо, 2!';
+                            alert(text + " Тест пройден на: " + general + "%");
+                            break;
+                    }
+                    return false
+                })
+            })
+        </script>
+        <div id="wrap" style="text-align: center;">
+            <p style="margin-top: 30px; text-align: center;">Угадайте автора! Русские стихи на английском языке</p>
+            <div class = "questionBlock">
+                <br>
+                <form method="POST" action="test.php" class="questionForm">
+                    <div class="group">
+                        Вопрос 1:<br><img src="../style/images/стихи/1.jpg" alt="first poem"/><br>
+                        <input type = "radio" name="q1" value="0">Жорж Дантес<br>
+                        <input type = "radio" name="q1" value="1">Александр Пушкин<br>
+                        <input type = "radio" name="q1" value="0">Михаил Лермонтов<br>
+                    </div>
+
+                    <br>
+                    <div class="group">
+                        Вопрос 2:<br><img src="../style/images/стихи/2.jpg" alt="second poem"/><br>
+                        <input type = "radio" name="q2" value="1">Александр Блок<br>
+                        <input type = "radio" name="q2" value="0">Сергей Есенин<br>
+                        <input type = "radio" name="q2" value="0">Николай Гумилев<br>
+                    </div>	
+                    <br>
+                    <div class="group">
+                        Вопрос 3:<br><img src="../style/images/стихи/3.jpg" alt="third poem"/><br>
+                        <input type = "radio" name="q3" value="0">Василий Жуковский<br>
+                        <input type = "radio" name="q3" value="0">Анна Ахматова<br>
+                        <input type = "radio" name="q3" value="1">Николай Гумилев<br>
+                    </div>		
+                    <br>
+                    <div class="group">
+                        Вопрос 4:<br><img src="../style/images/стихи/4.jpg" alt="forth poem"/><br>
+                        <input type = "radio" name="q4" value="0">Федор Тютчев<br>
+                        <input type = "radio" name="q4" value="1">Марина Цветаева<br>
+                        <input type = "radio" name="q4" value="0">Александр Пушкин<br>
+                    </div>		
+                    <br>
+                    <input type="submit" value="ОТПРАВИТЬ" name="submit" />
+                    <a id="back" href="../addTest.html" class="myButton"> Вернуться назад</a> 
+                </form>
+            </div>
+            <div id="navcontainer">
+            </div>
+            <p></p>
+        </div>  
+    </body>
+</html>
